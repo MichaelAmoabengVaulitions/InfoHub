@@ -2,6 +2,10 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import VueResource from 'vue-resource'
+
+//Attach vue-resource plugin to the vue instance
+Vue.use(VueResource);
 
 Vue.config.productionTip = false
 
