@@ -1,28 +1,32 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+  <div class="container" id="app">
+    <!--main components-->
+    <sourceSelection></sourceSelection>
+    <newsList></newsList>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+  //Importing the main components
+import sourceSelection from './components/sourceSelection'
+import newsList from './components/newsList'
 
 export default {
   name: 'app',
   components: {
-    Hello
-  }
+    sourceSelection,
+    newsList
+  },
+    data() {
+      return {
+          source: ""
+      }
+    }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
 }
 </style>
