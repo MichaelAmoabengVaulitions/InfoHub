@@ -1,9 +1,19 @@
 <template>
+    <div class="jumbotron" id="source">
     <div class="sourceselection">
-        <h4>Select News Source</h4>
+        <h2><i class="fa fa-list-alt" aria-hidden="true"></i> News List</h2>
+        <h4>
+            <i class="fa fa-newspaper-o" aria-hidden="true"></i> Select News Source</h4>
         <select class="form-control" v-on:change="sourceChanged">
             <option v-bind:value="source.id" v-for="source in sources">{{source.name}}</option>
         </select>
+
+        <div v-if="source">
+            <br>
+            <h5>{{ source.description }}</h5>
+            <a v-bind:href="source.url" class="btn btn-primary" target="_blank">Visit {{ source.name}} Website</a>
+        </div>
+    </div>
     </div>
 
 </template>
@@ -19,7 +29,7 @@
         },
         methods: {
             sourceChanged: function (e) {
-                for(var i=0; i<sources.length; i++){
+                for(var i=0; i<this.sources.length; i++){
                     if(this.sources[i].id == e.target.value) {
                         this.source = this.sources[i];
                     }

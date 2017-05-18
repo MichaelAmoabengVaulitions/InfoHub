@@ -32,7 +32,7 @@ export default {
 
 <style>
 #app {
-    background-color: teal;
+    background-color: ghostwhite;
     padding: 20px;
 }
 </style>
