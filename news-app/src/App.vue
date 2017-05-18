@@ -1,8 +1,8 @@
 <template>
   <div class="container" id="app">
     <!--main components-->
-    <sourceSelection></sourceSelection>
-    <newsList></newsList>
+    <sourceSelection v-on:sourceChanged="sourceChanged"></sourceSelection>
+    <newsList v-bind:source="source"></newsList>
   </div>
 </template>
 
@@ -21,12 +21,17 @@ export default {
       return {
           source: ""
       }
+    },
+    methods: {
+      sourceChanged: function (source) {
+          this.source = source;
+      }
     }
 }
 </script>
 
 <style>
 #app {
-
+    padding: 20px;
 }
 </style>
